@@ -1,10 +1,26 @@
 services:
-  postgres:
+  db:
     image: postgres:16
     container_name: jobtracker-db
     environment:
       POSTGRES_DB: jobtracker
-      POSTGRES_USER: jobuser
-      POSTGRES_PASSWORD: jobpass
+      POSTGRES_USER: ${DB_USER:-jobuser}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-jobpass}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    #ports:
+    #  - "5432:5432"
+  app:
+    build: .
+    image: jobtracker:latest
+    container_name: jobtracker-app
+    depends_on:
+      - db
+    environment:
+      DB_URL: ${DB_URL:-jdbc:postgresql://db:5432/jobtracker}
+      DB_USER: ${DB_USER:-jobuser}
+      DB_PASSWORD: ${DB_PASSWORD:-jobpass}
     ports:
-      - "5432:5432"
+      - "8082:8080"
+volumes:
+  postgres_data:

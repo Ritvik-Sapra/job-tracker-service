@@ -1,9 +1,16 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/jobtracker
-    username: jobuser
-    password: jobpass
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/jobtracker}
+    username: ${DB_USER:jobuser}
+    password: ${DB_PASSWORD:jobpass}
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
+    open-in-view: false
+logging:
+  level:
+    org.hibernate.SQL: off
+    org.hibernate.type.descriptor.sql: off
+    org.springframework: info
+    com.ritvik.jobtracker: info
