@@ -14,3 +14,12 @@ logging:
     org.hibernate.type.descriptor.sql: off
     org.springframework: info
     com.ritvik.jobtracker: info
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      probes:
+        enabled: true
