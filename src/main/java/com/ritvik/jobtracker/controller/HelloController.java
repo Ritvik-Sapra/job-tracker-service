@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @GetMapping("/")
     public String home() {
-        return "Job Tracker backend is alive 🚀" ;
+        return "Job Tracker backend is alive 🚀 and CI/CD implemented" ;
     }
 }
