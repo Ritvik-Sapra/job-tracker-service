@@ -5,13 +5,9 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  packages: write
-
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ritvik-sapra/job-tracker-service
+  IMAGE_NAME: ${{ github.repository_owner }}/${{ github.repository }}
 
 jobs:
   build-and-push:
