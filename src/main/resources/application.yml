@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jobtracker
+    username: jobuser
+    password: jobpass
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

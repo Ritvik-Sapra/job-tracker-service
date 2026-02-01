@@ -1,0 +1,40 @@
+HELP.md
+# Maven / Gradle
+target/
+build/
+.gradle/
+.mvn/wrapper/maven-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.classpath
+.factorypath
+.apt_generated
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Java
+*.class
+*.log
+*.jar
+*.war
+
+# OS
+.DS_Store
+
+# Env
+.env
+application-local.yml
+application-local.properties
