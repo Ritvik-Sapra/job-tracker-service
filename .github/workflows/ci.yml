@@ -1,5 +1,5 @@
 name: CI - Build Docker Image
-
+# Adding CI functionality
 on:
   push:
     branches:
