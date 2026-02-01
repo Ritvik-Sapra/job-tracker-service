@@ -19,6 +19,7 @@ WORKDIR /app
 # Copy only the built jar from builder stage
 COPY --from=builder /app/target/*.jar app.jar
 EXPOSE 8080
+RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
 
 # Run the app
 ENTRYPOINT ["java", "-jar", "app.jar"]
