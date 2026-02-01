@@ -1,5 +1,5 @@
-name: CI - Build Docker Image
-# Adding CI functionality
+name: CI - Build and publish Docker Image
+
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repositry }}
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build-and-push:
