@@ -11,8 +11,9 @@ services:
     ports:
       - "5432:5432"
   app:
-    build: .
-    image: jobtracker:latest
+    image: ghcr.io/ritvik-sapra/job-tracker-service:latest
+    #build: .
+    #image: jobtracker:latest
     container_name: jobtracker-app
     depends_on:
       - db
